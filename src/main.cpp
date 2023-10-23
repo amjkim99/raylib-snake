@@ -11,8 +11,8 @@ int main() {
 
     switch(game.check_state()) {
       case TITLE:
-        game.draw_title_screen();
         game.title_input();
+        game.draw_title_screen();
         break;
       case PLAYING:
         if (game.interval_passed()) {
@@ -23,10 +23,8 @@ int main() {
         game.draw_playing();
         break;
       case LOSE:
+        game.lose_input();
         game.draw_lose();
-        if (IsKeyPressed(KEY_R)) {
-          game.reset();
-        }
         break;
     }
 

@@ -1,7 +1,7 @@
 #include "snake.hpp"
 
 Snake::Snake()
-  : body({Vector2{6, 9}, Vector2{5, 9}, Vector2{4, 9}}), direction({1, 0}), segmentsToAdd(0) { }
+  : body({Vector2{6, 9}, Vector2{5, 9}, Vector2{4, 9}}), direction(RIGHT), segmentsToAdd(0) { }
 
 Snake::Snake(Snake &other)
   : body(other.body), direction(other.get_direction()), segmentsToAdd(0) { }
@@ -39,7 +39,7 @@ void Snake::pop_back() {
 
 void Snake::reset() {
   body = {Vector2{6, 9}, Vector2{5, 9}, Vector2{4, 9}};
-  direction = {1, 0};
+  direction = RIGHT;
 }
 
 void Snake::eat() {
