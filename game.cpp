@@ -3,9 +3,10 @@
 
 Game::Game()
   : snake(), food(snake), obstacles(), state(TITLE),
-    lastUpdateTime(0), score(0), allowMove(false), obstaclesOn(false),
-    eatSound(LoadSound("resources/eat.mp3")), wallSound(LoadSound("resources/wall.mp3")) {
+    lastUpdateTime(0), score(0), allowMove(false), obstaclesOn(false) {
   InitAudioDevice();
+  eatSound = LoadSound("resources/eat.mp3");
+  wallSound = LoadSound("resources/wall.mp3");
 }
 
 Game::~Game() {

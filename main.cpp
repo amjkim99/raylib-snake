@@ -16,8 +16,11 @@ int main() {
         break;
       case PLAYING:
         if (game.interval_passed()) {
-          game.allow_move();
           game.update();
+          if (game.check_state() == LOSE) {
+            break;
+          }
+          game.allow_move();
         }
         game.move();
         game.draw_playing();
